@@ -1,0 +1,59 @@
+.rocket-container {
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+}
+
+.road {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: gray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 4px gray;
+  width: 20%;
+  margin-top: 100px;
+}
+
+.road::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-image: url(/rocket.svg);
+  background-size: cover;
+  /* властивість переходу */
+  transition-property: transform;
+  /* час переходу */
+  transition-duration: 3s;
+  /* тип переходу */
+  transition-timing-function: linear;
+}
+
+.road:nth-child(2):hover::before {
+  transition-timing-function: ease;
+}
+.road:nth-child(3):hover::before {
+  transition-timing-function: ease-in;
+}
+.road:nth-child(4):hover::before {
+  transition-timing-function: ease-in-out;
+}
+
+.road:nth-child(5):hover::before {
+  transition-timing-function: ease-out;
+}
+
+.road:nth-child(6):hover::before {
+  transition-timing-function: cubic-bezier(1, 0.01, 0, 0.99);
+}
+
+.road-name {
+  font-size: 20px;
+}
+
+.road:hover:before {
+  transform: translateY(-58vh);
+}
